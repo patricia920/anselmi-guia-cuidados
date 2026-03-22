@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Cuidados | Anselmi</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --creme: #F7F1E5;
+    --caramelo: #BB9972;
+    --bordo: #5D2A2C;
+    --preto: #000000;
+    --branco: #FFFFFF;
+    --font-sans: 'Helvetica Neue', 'Arial', sans-serif;
+    --font-serif: 'Georgia', 'Times New Roman', serif;
+    --text-secondary: #4A4A4A;
+    --text-light: #7A7A7A;
+    --border: #E4DDD0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--preto);
+    background: var(--creme);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- HEADER ---- */
+  .header {
+    background: var(--preto);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-logo img {
+    height: 16px;
+    width: auto;
+  }
+  .header-label {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: var(--preto);
+    text-align: center;
+    padding: 80px 24px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(187,153,114,0.3), transparent);
+  }
+  .hero-logo {
+    margin-bottom: 40px;
+  }
+  .hero-logo img {
+    height: 32px;
+    width: auto;
+  }
+  .hero-overline {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--caramelo);
+    border: 1px solid rgba(187,153,114,0.35);
+    padding: 6px 22px;
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--branco);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero p {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ---- MAIN ---- */
+  .main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--caramelo);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--font-sans);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--preto);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .section-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 48px;
+    max-width: 560px;
+  }
+
+  /* ---- GRID DE MATERIAS-PRIMAS ---- */
+  .fibers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .fibers-grid-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .fibers-grid { grid-template-columns: 1fr; }
+    .fibers-grid-bottom { grid-template-columns: 1fr; }
+  }
+
+  .fiber-card {
+    background: var(--branco);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+  }
+  .fiber-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+  }
+
+  .fiber-card-img {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fiber-card-img .fiber-icon {
+    width: 64px;
+    height: 64px;
+    opacity: 0.12;
+  }
+
+  .fiber-card-body {
+    padding: 28px 28px 32px;
+  }
+
+  .fiber-card-overline {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--caramelo);
+    margin-bottom: 10px;
+  }
+  .fiber-card h2 {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--preto);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  .fiber-card p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .fiber-card-cta {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--preto);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+  }
+  .fiber-card:hover .fiber-card-cta {
+    gap: 12px;
+  }
+  .fiber-card-cta svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* fiber colors */
+  .fiber-algodao .fiber-card-img { background: #F7F1E5; }
+  .fiber-merino .fiber-card-img { background: #EDE8DB; }
+  .fiber-cashmere .fiber-card-img { background: linear-gradient(135deg, #F7F1E5, #E8D8C8); }
+  .fiber-tencel .fiber-card-img { background: #E8ECE4; }
+  .fiber-poliamida .fiber-card-img { background: #EDEBE6; }
+
+  /* highlight stripe */
+  .fiber-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--preto);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .fiber-card:hover::before {
+    transform: scaleX(1);
+  }
+  .fiber-cashmere::before {
+    background: var(--bordo);
+  }
+
+  /* ---- BOTTOM BAR ---- */
+  .bottom-bar {
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .bottom-bar-text {
+    max-width: 480px;
+  }
+  .bottom-bar-text h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--preto);
+    margin-bottom: 10px;
+  }
+  .bottom-bar-text p {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.75;
+  }
+  .bottom-bar-stats {
+    display: flex;
+    gap: 32px;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--preto);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.62rem;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    background: var(--preto);
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .footer-logo {
+    margin-bottom: 16px;
+  }
+  .footer-logo img {
+    height: 14px;
+    width: auto;
+  }
+  .footer-text {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.06em;
+    line-height: 1.9;
+  }
+  .footer-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(187,153,114,0.3);
+    margin: 16px auto;
+  }
+
+  /* ---- FIBER TEXTURE SVGs ---- */
+  .texture-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    opacity: 0.06;
+  }
+
+  /* status badges */
+  .fiber-badge {
+    display: inline-block;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    margin-bottom: 16px;
+  }
+  .badge-disponivel {
+    background: var(--preto);
+    color: var(--creme);
+  }
+  .badge-em-breve {
+    background: var(--border);
+    color: var(--text-light);
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">
+    <img src="logo-0.png" alt="ANSELMI">
+  </div>
+  <div class="header-label">Cuidar para Durar</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-logo">
+    <img src="logo-0.png" alt="ANSELMI">
+  </div>
+  <div class="hero-overline">Cuidar para Durar</div>
+  <h1>Guia de Cuidados com as Suas Pe&ccedil;as</h1>
+  <p>Cada fibra pede um cuidado espec&iacute;fico. Escolha a mat&eacute;ria-prima da sua pe&ccedil;a e descubra como mant&ecirc;-la bonita por muito mais tempo.</p>
+</section>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="section-label">Mat&eacute;rias-Primas</div>
+  <div class="section-title">Escolha uma fibra</div>
+  <div class="section-desc">Selecione a composi&ccedil;&atilde;o principal da sua pe&ccedil;a para acessar as instru&ccedil;&otilde;es de cuidado detalhadas.</div>
+
+  <!-- ROW 1: 3 cards -->
+  <div class="fibers-grid">
+
+    <!-- ALGODAO -->
+    <a href="guia_cuidados_algodao.html" class="fiber-card fiber-algodao">
+      <div class="fiber-card-img">
+        <svg class="texture-svg" viewBox="0 0 200 200"><pattern id="p1" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="#000"/></pattern><rect width="200" height="200" fill="url(#p1)"/></svg>
+        <svg class="fiber-icon" viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="1.2"><path d="M32 8c-6 0-12 8-12 20s6 28 12 28 12-16 12-28S38 8 32 8z"/><path d="M20 32c0-4 5-8 12-8s12 4 12 8"/><path d="M24 20c2-2 5-3 8-3s6 1 8 3"/></svg>
+      </div>
+      <div class="fiber-card-body">
+        <span class="fiber-badge badge-disponivel">Dispon&iacute;vel</span>
+        <div class="fiber-card-overline">Fibra Natural</div>
+        <h2>Algod&atilde;o</h2>
+        <p>Macio, respir&aacute;vel e vers&aacute;til. A fibra mais presente no nosso portf&oacute;lio, do algod&atilde;o org&acirc;nico ao mercerizado.</p>
+        <span class="fiber-card-cta">Ver guia completo <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
+      </div>
+    </a>
+
+    <!-- LA MERINO -->
+    <a href="#" class="fiber-card fiber-merino">
+      <div class="fiber-card-img">
+        <svg class="texture-svg" viewBox="0 0 200 200"><pattern id="p2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0 8 Q4 0 8 8 Q12 16 16 8" stroke="#000" fill="none" stroke-width="0.5"/></pattern><rect width="200" height="200" fill="url(#p2)"/></svg>
+        <svg class="fiber-icon" viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="1.2"><ellipse cx="32" cy="28" rx="16" ry="14"/><path d="M20 36c-2 4-4 10-4 14h32c0-4-2-10-4-14"/><path d="M24 20c0-6 4-10 8-10s8 4 8 10"/><circle cx="28" cy="24" r="3"/><circle cx="36" cy="24" r="3"/><circle cx="32" cy="18" r="3"/></svg>
+      </div>
+      <div class="fiber-card-body">
+        <span class="fiber-badge badge-em-breve">Em Breve</span>
+        <div class="fiber-card-overline">Fibra Animal</div>
+        <h2>L&atilde; Merino</h2>
+        <p>A l&atilde; mais nobre e suave. Termorreguladora, leve e resistente ao odor. Requer cuidados delicados.</p>
+        <span class="fiber-card-cta">Em breve <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
+      </div>
+    </a>
+
+    <!-- CASHMERE -->
+    <a href="#" class="fiber-card fiber-cashmere">
+      <div class="fiber-card-img">
+        <svg class="texture-svg" viewBox="0 0 200 200"><pattern id="p3" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M0 12 Q6 0 12 12 Q18 24 24 12" stroke="#5D2A2C" fill="none" stroke-width="0.4"/></pattern><rect width="200" height="200" fill="url(#p3)"/></svg>
+        <svg class="fiber-icon" viewBox="0 0 64 64" fill="none" stroke="#5D2A2C" stroke-width="1.2"><path d="M16 44c0-12 7-20 16-20s16 8 16 20"/><path d="M22 44c0-8 4-14 10-14s10 6 10 14"/><path d="M28 44c0-4 2-8 4-8s4 4 4 8"/><path d="M12 44h40v6H12z"/></svg>
+      </div>
+      <div class="fiber-card-body">
+        <span class="fiber-badge badge-em-breve">Em Breve</span>
+        <div class="fiber-card-overline">Fibra Premium</div>
+        <h2>Cashmere</h2>
+        <p>A fibra mais preciosa do mundo. Leve como ar, quente como abraço. Exige o cuidado mais dedicado.</p>
+        <span class="fiber-card-cta">Em breve <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ROW 2: 2 cards -->
+  <div class="fibers-grid-bottom">
+
+    <!-- TENCEL / MODAL -->
+    <a href="#" class="fiber-card fiber-tencel">
+      <div class="fiber-card-img">
+        <svg class="texture-svg" viewBox="0 0 200 200"><pattern id="p4" width="12" height="40" patternUnits="userSpaceOnUse"><line x1="6" y1="0" x2="6" y2="40" stroke="#000" stroke-width="0.3"/></pattern><rect width="200" height="200" fill="url(#p4)"/></svg>
+        <svg class="fiber-icon" viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="1.2"><path d="M32 8v48"/><path d="M24 12c4 4 4 12 0 16s-4 12 0 16"/><path d="M40 12c-4 4-4 12 0 16s4 12 0 16"/><circle cx="32" cy="8" r="3"/></svg>
+      </div>
+      <div class="fiber-card-body">
+        <span class="fiber-badge badge-em-breve">Em Breve</span>
+        <div class="fiber-card-overline">Fibra Sustent&aacute;vel</div>
+        <h2>Tencel &amp; Modal</h2>
+        <p>Fibras celul&oacute;sicas de origem sustent&aacute;vel. Toque sedoso, excelente caimento e baixo impacto ambiental.</p>
+        <span class="fiber-card-cta">Em breve <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
+      </div>
+    </a>
+
+    <!-- POLIAMIDA -->
+    <a href="#" class="fiber-card fiber-poliamida">
+      <div class="fiber-card-img">
+        <svg class="texture-svg" viewBox="0 0 200 200"><pattern id="p5" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="16" height="16" rx="2" stroke="#000" fill="none" stroke-width="0.3"/></pattern><rect width="200" height="200" fill="url(#p5)"/></svg>
+        <svg class="fiber-icon" viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="1.2"><path d="M16 48L32 16l16 32"/><path d="M20 40h24"/><path d="M24 32h16"/><circle cx="32" cy="16" r="4"/></svg>
+      </div>
+      <div class="fiber-card-body">
+        <span class="fiber-badge badge-em-breve">Em Breve</span>
+        <div class="fiber-card-overline">Fibra Sint&eacute;tica</div>
+        <h2>Poliamida</h2>
+        <p>Resist&ecirc;ncia e elasticidade. Presente nos nossos blends para dar estrutura, leveza e durabilidade &agrave;s pe&ccedil;as.</p>
+        <span class="fiber-card-cta">Em breve <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar">
+    <div class="bottom-bar-text">
+      <h3>Por que cuidamos tanto?</h3>
+      <p>Cada pe&ccedil;a Anselmi &eacute; tricotada na nossa f&aacute;brica em Farroupilha, RS, com fios selecionados e tintos na nossa pr&oacute;pria tinturaria. Cuidar bem da sua pe&ccedil;a &eacute; honrar todo esse processo &mdash; e garantir que ela te acompanhe por muitas esta&ccedil;&otilde;es.</p>
+    </div>
+    <div class="bottom-bar-stats">
+      <div class="stat">
+        <div class="stat-num">1984</div>
+        <div class="stat-label">Desde</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Fibras</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">124</div>
+        <div class="stat-label">Produtos analisados</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="logo-0.png" alt="ANSELMI">
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-text">
+    Guia de Cuidados &mdash; Anselmi<br>
+    Tric&ocirc; feito com alma desde 1984<br>
+    Farroupilha &middot; RS &middot; Brasil
+  </div>
+</footer>
+
+</body>
+</html>
