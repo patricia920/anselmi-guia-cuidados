@@ -24,6 +24,7 @@
     --text-light: #7A7A7A;
     --border-light: #E4DDD0;
     --section-bg: #F2EBD9;
+    --accent-gold-light: #F2EBD9;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -84,9 +85,8 @@
     padding: 5px 18px; border-radius: 2px; margin-bottom: 28px;
   }
   .hero h1 {
-    font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 2.6rem; font-weight: 900;
-    margin-bottom: 14px; letter-spacing: -0.03em;
-    text-transform: uppercase;
+    font-family: 'Georgia', serif; font-size: 2.6rem; font-weight: 700;
+    margin-bottom: 14px; letter-spacing: -0.01em;
   }
   .hero p {
     font-size: 0.92rem; color: rgba(255,255,255,0.55); font-weight: 300;
@@ -100,182 +100,172 @@
   .section { padding: 56px 0; }
   .section + .section { border-top: 1px solid var(--border-light); }
   .section-title {
-    font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 1.5rem; font-weight: 900;
-    color: var(--brand-black); margin-bottom: 8px;
-    letter-spacing: -0.02em; text-transform: uppercase;
+    font-family: 'Georgia', serif; font-size: 1.8rem; font-weight: 700;
+    color: var(--brand-bordo); margin-bottom: 8px;
   }
   .section-subtitle {
-    font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 32px;
-    max-width: 640px; font-weight: 300;
+    font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 32px;
+    max-width: 640px;
   }
 
-  /* ---- CARE CARDS ---- */
+  /* ---- CARE CARDS (cliente) ---- */
   .care-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
     margin-bottom: 24px;
   }
   @media (max-width: 640px) { .care-grid { grid-template-columns: 1fr; } }
 
   .care-card {
-    background: var(--card-bg); border-radius: 4px; padding: 28px;
+    background: var(--card-bg); border-radius: 8px; padding: 24px;
     border: 1px solid var(--border-light); transition: box-shadow 0.2s;
-    display: flex; gap: 20px; align-items: flex-start;
   }
-  .care-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  .care-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
   .care-card-icon {
-    flex-shrink: 0;
-    width: 48px; height: 48px;
+    width: 40px; height: 40px; border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px; font-size: 1.3rem;
   }
-  .care-card-icon svg { width: 44px; height: 44px; }
-  .care-card-body { flex: 1; }
   .care-card h3 {
-    font-size: 0.84rem; font-weight: 700; margin-bottom: 6px;
-    color: var(--text-primary); letter-spacing: 0.02em;
-    text-transform: uppercase;
+    font-size: 0.95rem; font-weight: 600; margin-bottom: 8px;
+    color: var(--text-primary);
   }
   .care-card p {
-    font-size: 0.82rem; color: var(--text-secondary); line-height: 1.65;
-    font-weight: 300;
+    font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65;
   }
+  .care-card .highlight {
+    display: inline-block; background: var(--accent-gold-light);
+    color: #7D6608; font-weight: 600; font-size: 0.8rem;
+    padding: 2px 8px; border-radius: 4px; margin-top: 8px;
+  }
+
+  .icon-blue { background: #F2EBD9; }
+  .icon-orange { background: #F0DFE0; }
+  .icon-green { background: #DDE9E0; }
+  .icon-purple { background: #EDE8F0; }
+  .icon-red { background: #F0DFE0; }
+  .icon-gold { background: #F2EBD9; }
 
   /* ---- TIPS ---- */
   .tips-list { list-style: none; padding: 0; }
   .tips-list li {
-    padding: 16px 18px 16px 50px; position: relative;
-    border-bottom: 1px solid var(--border-light); font-size: 0.86rem;
-    color: var(--text-secondary); font-weight: 300;
+    padding: 14px 16px 14px 48px; position: relative;
+    border-bottom: 1px solid var(--border-light); font-size: 0.88rem;
+    color: var(--text-secondary);
   }
   .tips-list li::before {
-    content: attr(data-icon); position: absolute; left: 16px; top: 16px;
+    content: attr(data-icon); position: absolute; left: 14px; top: 14px;
     font-size: 1rem;
   }
   .tips-list li:last-child { border-bottom: none; }
-  .tips-list li strong { color: var(--text-primary); font-weight: 600; }
+  .tips-list li strong { color: var(--text-primary); }
 
   /* ---- BLEND NOTE ---- */
   .blend-note {
-    background: var(--card-bg); border-radius: 4px; padding: 28px 32px;
-    margin-top: 14px; border-left: 3px solid var(--brand-black);
+    background: #FDFBF6;
+    border-radius: 8px; padding: 28px 32px; margin-top: 16px;
+    border-left: 4px solid var(--brand-camel);
   }
   .blend-note:first-of-type { margin-top: 0; }
-  .blend-note h3 {
-    font-size: 0.85rem; font-weight: 700; color: var(--brand-black);
-    margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.02em;
-  }
-  .blend-note p {
-    font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7;
-    font-weight: 300;
-  }
-
+  .blend-note h3 { font-size: 0.95rem; font-weight: 600; color: var(--brand-bordo); margin-bottom: 8px; }
+  .blend-note p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
   /* ---- INTERNAL: TABLES ---- */
   .data-table {
     width: 100%; border-collapse: collapse; margin-bottom: 24px;
-    font-size: 0.8rem; border-radius: 2px; overflow: hidden;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    font-size: 0.82rem; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
   }
   .data-table thead th {
-    background: var(--brand-black); color: var(--brand-cream); font-weight: 700;
-    padding: 13px 14px; text-align: left; font-size: 0.72rem;
-    letter-spacing: 0.06em; text-transform: uppercase;
+    background: var(--brand-black); color: #fff; font-weight: 600;
+    padding: 12px 14px; text-align: left; font-size: 0.78rem;
+    letter-spacing: 0.03em; text-transform: uppercase;
   }
   .data-table tbody td {
-    padding: 12px 14px; border-bottom: 1px solid var(--border-light);
-    vertical-align: top; font-weight: 300;
+    padding: 11px 14px; border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
   }
-  .data-table tbody tr:nth-child(even) { background: #FAF6EE; }
-  .data-table tbody tr:hover { background: #F2ECE0; }
-  .data-table .aspect { font-weight: 700; color: var(--text-primary); white-space: nowrap; }
+  .data-table tbody tr:nth-child(even) { background: #FDFBF6; }
+  .data-table tbody tr:hover { background: #F2EBD9; }
+  .data-table .aspect { font-weight: 600; color: var(--text-primary); white-space: nowrap; }
   .cell-diverge { background: var(--diverge-red-bg) !important; color: var(--diverge-red); font-weight: 500; }
   .cell-converge { background: var(--converge-green-bg) !important; color: var(--converge-green); font-weight: 500; }
 
   .badge-diverge, .badge-converge {
-    display: inline-block; font-size: 0.65rem; font-weight: 700;
-    padding: 2px 8px; border-radius: 2px; margin-left: 4px; vertical-align: middle;
-    letter-spacing: 0.03em; text-transform: uppercase;
+    display: inline-block; font-size: 0.7rem; font-weight: 600;
+    padding: 2px 8px; border-radius: 4px; margin-left: 4px; vertical-align: middle;
   }
   .badge-diverge { background: var(--diverge-red-bg); color: var(--diverge-red); }
   .badge-converge { background: var(--converge-green-bg); color: var(--converge-green); }
 
   /* ---- STAT ROW ---- */
-  .stat-row { display: flex; gap: 14px; margin-bottom: 32px; flex-wrap: wrap; }
+  .stat-row { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
   .stat-box {
-    flex: 1; min-width: 140px; background: var(--card-bg); border-radius: 2px;
-    padding: 24px; text-align: center; border: 1px solid var(--border-light);
+    flex: 1; min-width: 140px; background: var(--card-bg); border-radius: 8px;
+    padding: 20px; text-align: center; border: 1px solid var(--border-light);
   }
   .stat-number {
-    font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 2.2rem; font-weight: 900;
-    color: var(--brand-black); line-height: 1; letter-spacing: -0.03em;
+    font-family: 'Georgia', serif; font-size: 2rem; font-weight: 700;
+    color: var(--brand-bordo); line-height: 1;
   }
-  .stat-label {
-    font-size: 0.68rem; color: var(--text-light); margin-top: 6px;
-    letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
-  }
+  .stat-label { font-size: 0.75rem; color: var(--text-light); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
 
-  /* ---- FINDINGS ---- */
+  /* ---- INTERNAL FINDINGS ---- */
   .finding {
-    display: flex; gap: 16px; padding: 18px 0;
+    display: flex; gap: 14px; padding: 16px 0;
     border-bottom: 1px solid var(--border-light);
   }
   .finding:last-child { border-bottom: none; }
   .finding-arrow {
-    flex-shrink: 0; width: 28px; height: 28px; border-radius: 2px;
-    background: var(--brand-black); color: var(--brand-cream);
+    flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+    background: #F2EBD9; color: var(--brand-camel);
     display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 0.8rem; margin-top: 2px;
+    font-weight: 700; font-size: 0.85rem; margin-top: 2px;
   }
-  .finding p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
-  .finding p strong { color: var(--text-primary); font-weight: 600; }
+  .finding p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; }
+  .finding p strong { color: var(--text-primary); }
 
-  /* ---- INTERNAL CARDS ---- */
+  /* ---- INTERNAL DIVERGENCES ---- */
   .internal-card {
-    background: var(--card-bg); border-radius: 2px; padding: 28px;
-    border: 1px solid var(--border-light); margin-bottom: 14px;
+    background: var(--card-bg); border-radius: 8px; padding: 24px;
+    border: 1px solid var(--border-light); margin-bottom: 16px;
   }
   .internal-card h4 {
-    font-size: 0.85rem; font-weight: 700; color: var(--brand-black); margin-bottom: 10px;
-    text-transform: uppercase; letter-spacing: 0.02em;
+    font-size: 0.9rem; font-weight: 600; color: var(--brand-bordo); margin-bottom: 10px;
   }
-  .internal-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.65; font-weight: 300; }
+  .internal-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
   .internal-card .example {
-    background: #FAF6EE; border-radius: 2px; padding: 14px 16px;
-    margin-top: 12px; font-size: 0.8rem; color: var(--text-secondary);
-    border-left: 3px solid var(--brand-bordo);
+    background: #F2EBD9; border-radius: 6px; padding: 10px 14px;
+    margin-top: 10px; font-size: 0.8rem; color: var(--text-secondary);
+    border-left: 3px solid var(--diverge-red);
   }
 
   /* ---- RECOMMENDATION BOX ---- */
   .reco-box {
     background: var(--brand-black);
-    color: #fff; border-radius: 4px; padding: 36px; margin-top: 32px;
+    color: #fff; border-radius: 8px; padding: 32px; margin-top: 32px;
   }
   .reco-box h3 {
-    font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 1.1rem; font-weight: 900;
-    margin-bottom: 14px; color: var(--brand-cream);
-    text-transform: uppercase; letter-spacing: 0.02em;
+    font-family: 'Georgia', serif; font-size: 1.3rem;
+    margin-bottom: 12px; color: var(--brand-camel);
   }
-  .reco-box p { font-size: 0.86rem; line-height: 1.75; color: rgba(255,255,255,0.7); font-weight: 300; }
+  .reco-box p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.85); }
 
   /* ---- LEGEND ---- */
   .legend {
-    display: flex; gap: 20px; margin-bottom: 20px; font-size: 0.75rem;
-    color: var(--text-secondary); font-weight: 500;
+    display: flex; gap: 20px; margin-bottom: 20px; font-size: 0.78rem;
+    color: var(--text-secondary);
   }
   .legend span { display: flex; align-items: center; gap: 6px; }
   .legend-dot {
-    width: 12px; height: 12px; border-radius: 2px; display: inline-block;
+    width: 12px; height: 12px; border-radius: 3px; display: inline-block;
   }
   .legend-dot.red { background: var(--diverge-red-bg); border: 1px solid var(--diverge-red); }
   .legend-dot.green { background: var(--converge-green-bg); border: 1px solid var(--converge-green); }
 
   /* ---- FOOTER ---- */
   .footer {
-    text-align: center; padding: 48px 24px;
-    font-size: 0.72rem; color: var(--text-light);
+    text-align: center; padding: 40px 24px;
+    font-size: 0.75rem; color: var(--text-light);
     border-top: 1px solid var(--border-light);
-    letter-spacing: 0.04em;
-  }
-  @media (max-width: 768px) {
-    .nav-logo { display: none; }
   }
 </style>
 </head>
@@ -313,131 +303,45 @@
 
       <div class="care-grid">
 
-        <!-- 1. Hand Wash 30°C -->
         <div class="care-card">
-          <div class="care-card-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 30 C6 30 6 18 24 18 C42 18 42 30 42 30" stroke="#000" stroke-width="2" fill="none"/>
-              <path d="M6 30 L6 38 L42 38 L42 30" stroke="#000" stroke-width="2" fill="none"/>
-              <path d="M6 30 C12 34 18 34 24 30 C30 26 36 26 42 30" stroke="#000" stroke-width="2" fill="none"/>
-              <text x="24" y="36" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="8" font-weight="600" fill="#000">30</text>
-              <path d="M20 14 C20 10 24 8 24 8 C24 8 28 10 28 14" stroke="#000" stroke-width="1.5" fill="none"/>
-              <path d="M22 16 L20 14 L24 11" stroke="#000" stroke-width="1.5" fill="none"/>
-            </svg>
-          </div>
-          <div class="care-card-body">
-            <h3>Lavar à Mão até 30°C</h3>
-            <p>Lave à mão em água fria ou morna (até 30°C). Para peças mais simples, a máquina no ciclo delicado a 30°C também é aceitável.</p>
-          </div>
+          <div class="care-card-icon icon-blue">&#128167;</div>
+          <h3>Lavagem</h3>
+          <p>Lave na <strong>máquina a 30°C no ciclo delicado</strong>, sempre do avesso. Para peças mais estruturadas ou com detalhes artesanais, prefira lavar à mão em água fria.</p>
+          <span class="highlight">30°C — ciclo delicado</span>
         </div>
 
-        <!-- 2. Do Not Bleach -->
-
         <div class="care-card">
-          <div class="care-card-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="24,10 42,38 6,38" stroke="#000" stroke-width="2" fill="none"/>
-              <line x1="16" y1="18" x2="32" y2="34" stroke="#000" stroke-width="2"/>
-              <line x1="32" y1="18" x2="16" y2="34" stroke="#000" stroke-width="2"/>
-            </svg>
-          </div>
-          <div class="care-card-body">
-            <h3>Não Usar Alvejante</h3>
-            <p>Não use alvejante com cloro. Se necessário, apenas alvejante sem cloro (à base de oxigênio) pode ser utilizado com cautela.</p>
-          </div>
+          <div class="care-card-icon icon-orange">&#9832;</div>
+          <h3>Ferro</h3>
+          <p>Passe do avesso em <strong>temperatura baixa a média (110–150°C)</strong>. Tricôs com pontos mais abertos ficam melhor com ferro a 110°C. Malhas lisas e firmes suportam até 150°C.</p>
+          <span class="highlight">110–150°C — do avesso</span>
         </div>
 
-        <!-- 3. Iron Up To 110°C -->
         <div class="care-card">
-          <div class="care-card-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 34 L10 18 L30 18 L40 28 L40 34 Z" stroke="#000" stroke-width="2" fill="none"/>
-              <line x1="10" y1="34" x2="40" y2="34" stroke="#000" stroke-width="2"/>
-              <circle cx="25" cy="27" r="2" fill="#000"/>
-            </svg>
-          </div>
-          <div class="care-card-body">
-            <h3>Ferro até 110°C</h3>
-            <p>Passe sempre do avesso em temperatura baixa (110°C, 1 ponto). Ideal para preservar a textura do ponto de tricô sem achatar as fibras.</p>
-          </div>
+          <div class="care-card-icon icon-green">&#127811;</div>
+          <h3>Secagem</h3>
+          <p><strong>Seque na horizontal</strong> sobre uma toalha seca. Para peças mais leves e firmes, o varal à sombra também funciona. Nunca use secadora — o calor encolhe e deforma o algodão.</p>
+          <span class="highlight">Horizontal — sem secadora</span>
         </div>
 
-        <!-- 4. Do Not Tumble Dry -->
         <div class="care-card">
-          <div class="care-card-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="10" width="32" height="28" rx="1" stroke="#000" stroke-width="2" fill="none"/>
-              <circle cx="24" cy="24" r="10" stroke="#000" stroke-width="2" fill="none"/>
-              <line x1="12" y1="14" x2="36" y2="34" stroke="#000" stroke-width="2"/>
-              <line x1="36" y1="14" x2="12" y2="34" stroke="#000" stroke-width="2"/>
-            </svg>
-          </div>
-          <div class="care-card-body">
-            <h3>Não Usar Secadora</h3>
-            <p>Nunca use secadora. O calor intenso encolhe e deforma o algodão, especialmente em peças de tricô com pontos abertos.</p>
-          </div>
+          <div class="care-card-icon icon-purple">&#129522;</div>
+          <h3>Detergente</h3>
+          <p>Use <strong>detergente suave e neutro</strong>, de preferência líquido. Evite alvejante com cloro — se necessário, use apenas alvejante sem cloro (à base de oxigênio).</p>
+          <span class="highlight">Neutro e líquido</span>
         </div>
 
-        <!-- 5. Wash Inside Out -->
         <div class="care-card">
-          <div class="care-card-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 30 C6 30 6 18 24 18 C42 18 42 30 42 30" stroke="#000" stroke-width="2" fill="none"/>
-              <path d="M6 30 L6 38 L42 38 L42 30" stroke="#000" stroke-width="2" fill="none"/>
-              <path d="M18 26 L24 20 L30 26" stroke="#000" stroke-width="1.5" fill="none"/>
-              <line x1="24" y1="20" x2="24" y2="34" stroke="#000" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div class="care-card-body">
-            <h3>Lavar do Avesso</h3>
-            <p>Vire a peça do avesso antes de lavar. Isso protege a superfície visível contra atrito e preserva a cor e a textura do ponto.</p>
-          </div>
+          <div class="care-card-icon icon-red">&#10060;</div>
+          <h3>O Que Evitar</h3>
+          <p><strong>Não torça</strong> a peça — pressione suavemente para retirar o excesso de água. Não use secadora. Evite atrito excessivo durante a lavagem para preservar a textura do ponto.</p>
         </div>
 
-        <!-- 6. Dry Flat -->
         <div class="care-card">
-          <div class="care-card-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="10" width="32" height="28" rx="1" stroke="#000" stroke-width="2" fill="none"/>
-              <line x1="14" y1="24" x2="34" y2="24" stroke="#000" stroke-width="2"/>
-            </svg>
-          </div>
-          <div class="care-card-body">
-            <h3>Secar na Horizontal</h3>
-            <p>Seque a peça deitada sobre uma toalha seca, à sombra. Nunca pendure peças de tricô pesadas — o peso deforma os ombros e o comprimento.</p>
-          </div>
+          <div class="care-card-icon icon-gold">&#128141;</div>
+          <h3>Armazenamento</h3>
+          <p><strong>Guarde dobrada</strong>, nunca em cabide (que deforma os ombros). Lavar antes de guardar por longos períodos. Mantenha em local arejado e seco.</p>
         </div>
-
-        <!-- 7. Iron Inside Out -->
-        <div class="care-card">
-          <div class="care-card-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 34 L10 18 L30 18 L40 28 L40 34 Z" stroke="#000" stroke-width="2" fill="none"/>
-              <line x1="10" y1="34" x2="40" y2="34" stroke="#000" stroke-width="2"/>
-              <path d="M21 28 L25 24 L29 28" stroke="#000" stroke-width="1.5" fill="none"/>
-              <line x1="25" y1="24" x2="25" y2="32" stroke="#000" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div class="care-card-body">
-            <h3>Passar do Avesso</h3>
-            <p>Sempre passe do avesso para não achatar o ponto de tricô e evitar brilho na superfície. Use um pano fino entre o ferro e a peça se preferir.</p>
-          </div>
-        </div>
-
-        <!-- 8. Dry Clean Tetrachlorethylene -->
-        <div class="care-card">
-          <div class="care-card-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="14" stroke="#000" stroke-width="2" fill="none"/>
-              <text x="24" y="29" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#000">P</text>
-            </svg>
-          </div>
-          <div class="care-card-body">
-            <h3>Lavagem a Seco (Tetracloroetileno)</h3>
-            <p>A lavagem a seco profissional com tetracloroetileno é permitida. Indicada para peças estruturadas ou com acabamentos especiais.</p>
-          </div>
-        </div>
-
       </div>
     </div>
     <!-- EXTRA TIPS -->
@@ -470,7 +374,7 @@
         <h3>Algodão + Viscose ou Lyocell</h3>
         <p>Siga as instruções da viscose: lave à mão ou máquina 30°C ciclo delicado. A viscose é muito frágil quando molhada — não torça e seque na horizontal.</p>
       </div>
-      <div class="blend-note" style="border-left-color: var(--brand-camel);">
+      <div class="blend-note" style="border-left-color: var(--text-light);">
         <h3>Algodão + Poliéster ou Acrílico</h3>
         <p>O algodão predomina no cuidado, mas atenção ao ferro: mantenha em 110°C para não danificar as fibras sintéticas, que são sensíveis ao calor.</p>
       </div>
